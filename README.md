@@ -1,5 +1,6 @@
 # 🇦🇹 Österreich Austria - COVID-19 Cases
-![Automatic Updates](https://github.com/Ramblurr/Austria-COVID-19/workflows/Automatic%20update/charts/badge.svg?branch=master) 
+
+![Automatic update](https://github.com/Ramblurr/Austria-COVID-19/workflows/Automatic%20update/badge.svg)
 
 Data concerning confirmed cases and recoveries of the novel coronavirus that causes COVID-19.
 
@@ -14,11 +15,24 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ## Developer
 
-#### Update the data sets
+#### Setup your virtualenv
+
+```console
+virtualenv -p $(which python3) venv
+source venv/bin/activate
+```
+
+#### Update the csvs
 
 ```console
 pip install -r requirements.txt
-python cases.py
+python -m parsers.austria
+```
+
+#### Update the plots
+
+```console
+jupyter nbconvert --execute --inplace *.ipynb
 ```
 
 ## License

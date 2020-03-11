@@ -85,11 +85,14 @@ def wayback(timestamp):
 
 
 index_cols = ["date", "time"]
+
+
 def clean_data(cases):
     cases = pd.DataFrame(cases)
     cases.sort_values(by=index_cols, inplace=True)
     cases.drop_duplicates(subset=index_cols, keep="first", inplace=True)
     return cases
+
 
 def historical():
     today_cases, today_recovered = fetch_data(url)
@@ -103,13 +106,19 @@ def historical():
         for ts in times:
             actual_ts, snapshot_url = wayback(ts)
             if actual_ts[0:8] == ts[0:8]:
-                print("Fetching day", "-{}".format(day), "{}-{}".format(ts[6:8], ts[4:6]), "@", ts[8:12], "Uhr")
+                print(
+                    "Fetching day",
+                    "-{}".format(day),
+                    "{}-{}".format(ts[6:8], ts[4:6]),
+                    "@",
+                    ts[8:12],
+                    "Uhr",
+                )
                 past_cases, past_recovered = fetch_data(snapshot_url)
                 if past_cases is not None:
                     cases.append(past_cases)
                 if past_recovered is not None:
                     recovered.append(past_recovered)
-
 
     cases = clean_data(cases)
     recovered = clean_data(recovered)
@@ -117,11 +126,13 @@ def historical():
     cases.to_csv("cases.csv", index=False)
     recovered.to_csv("recovered.csv", index=False)
 
+
 def current_data():
     today_cases, today_recovered = fetch_data(url)
     today_cases = pd.DataFrame([today_cases])
     today_recovered = pd.DataFrame([today_recovered])
     return today_cases, today_recovered
+
 
 def data(data_dir):
     today_cases, today_recovered = fetch_data(url)
@@ -134,6 +145,7 @@ def data(data_dir):
     cases = clean_data(pd.concat([cases, today_cases]))
     recovered = clean_data(pd.concat([recovered, today_recovered]))
     return cases, recovered
+
 
 def main():
     today_cases, today_recovered = fetch_data(url)
@@ -150,6 +162,7 @@ def main():
 
     cases.to_csv(cases_csv, index=False)
     recovered.to_csv(recovered_csv, index=False)
+
 
 if __name__ == "__main__":
     main()
