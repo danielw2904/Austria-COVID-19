@@ -13,6 +13,10 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ![Austria bundeslands confirmed cases](./images/states-cases.png)
 
+![Alt text](./images/text2.svg)
+<img src="./images/text2.svg">
+
+
 ## Developer
 
 #### Setup your virtualenv
