@@ -25,6 +25,8 @@ Last updated at: ![Last updated at](./images/updated-date.svg)
 
 ![Austria bundeslands confirmed cases](./images/states-cases.png)
 
+![Table Austria bundeslands confirmed cases](./images/states-cases-table.png)
+
 ## Developer
 
 #### Setup your virtualenv
