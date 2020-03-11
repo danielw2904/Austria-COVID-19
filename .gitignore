@@ -4,3 +4,4 @@ __*
 *.swp
 venv
 .ipynb_checkpoints
+table.html
