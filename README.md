@@ -11,6 +11,8 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ## Current Data
 
+Last updated at: ![Last updated at](./images/updated-date.svg)
+
 ### Total Confirmed Cases
 
 ![total cases](./images/total-cases.svg)
