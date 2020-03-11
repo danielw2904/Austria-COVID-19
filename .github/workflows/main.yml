@@ -1,0 +1,46 @@
+# Inspired by https://github.com/alext234/coronavirus-stats
+# Copyright 2020 Alext234
+
+name: Automatic update
+
+on:
+  push:
+    branches:
+      - master
+
+  schedule: # every hour
+    - cron:  '0 */1 * * *'
+
+jobs:
+  execute_notebooks:
+    runs-on: ubuntu-latest
+    container: 
+        image: alext234/datascience:latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+            mkdir -p data images 
+
+      - name: Update CSVs
+        run: |
+            python -m parsers.austria
+
+      - name: Execute notebooks
+        run: |
+            jupyter nbconvert --execute --inplace *.ipynb   --ExecutePreprocessor.timeout=300
+            
+      - name: Commit files 
+        run: |
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add data images *.ipynb
+            git commit -m "Update data, images and notebooks"
+
+      - name: Push to repo
+        uses: ad-m/github-push-action@master
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}

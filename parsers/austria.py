@@ -1,6 +1,7 @@
 import sys
 import csv
 import re
+import os
 import requests
 import requests_cache
 import pandas as pd
@@ -116,18 +117,39 @@ def historical():
     cases.to_csv("cases.csv", index=False)
     recovered.to_csv("recovered.csv", index=False)
 
+def current_data():
+    today_cases, today_recovered = fetch_data(url)
+    today_cases = pd.DataFrame([today_cases])
+    today_recovered = pd.DataFrame([today_recovered])
+    return today_cases, today_recovered
+
+def data(data_dir):
+    today_cases, today_recovered = fetch_data(url)
+
+    cases = pd.read_csv(os.path.join(data_dir, "cases.csv"))
+    recovered = pd.read_csv(os.path.join(data_dir, "recovered.csv"))
+
+    today_cases = pd.DataFrame([today_cases])
+    today_recovered = pd.DataFrame([today_recovered])
+    cases = clean_data(pd.concat([cases, today_cases]))
+    recovered = clean_data(pd.concat([recovered, today_recovered]))
+    return cases, recovered
+
 def main():
     today_cases, today_recovered = fetch_data(url)
 
-    cases = pd.read_csv("cases.csv")
-    recovered = pd.read_csv("recovered.csv")
+    cases_csv = os.path.join("data", "cases.csv")
+    recovered_csv = os.path.join("data", "recovered.csv")
+    cases = pd.read_csv(cases_csv)
+    recovered = pd.read_csv(recovered_csv)
 
     today_cases = pd.DataFrame([today_cases])
     today_recovered = pd.DataFrame([today_recovered])
     cases = clean_data(pd.concat([cases, today_cases]))
     recovered = clean_data(pd.concat([recovered, today_recovered]))
 
-    cases.to_csv("cases.csv", index=False)
-    recovered.to_csv("recovered.csv", index=False)
+    cases.to_csv(cases_csv, index=False)
+    recovered.to_csv(recovered_csv, index=False)
 
-main()
+if __name__ == "__main__":
+    main()
