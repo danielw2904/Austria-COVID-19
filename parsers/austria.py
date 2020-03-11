@@ -8,8 +8,6 @@ import pandas as pd
 from datetime import datetime, timedelta
 from lxml import html
 
-# import requests_cache
-# requests_cache.install_cache("cases_cache")
 
 url = "https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html"
 
@@ -39,19 +37,28 @@ def fetch_data(url):
     tree = html.fromstring(page.content)
 
     text = tree.xpath('//div[@class="infobox"]')[0].text_content()
+    tests = r".*Bisher durchgeführte Testungen in.*\):\s+([\d\.,]+)"
     summary = r".*Bestätigte (?:Erkrankungsfälle|Fälle),.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+(\d+)\s+Fälle"
     recovered = r".*Genesene Personen,.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+(\d+)"
-    recovered2 = r", Stand (.*), (.*) Uhr: (\d+).*"
 
     m = re.search(summary, text, re.MULTILINE)
     if m is None:
         return None, None
     date, time, total_cases = m.groups()
 
+    m = re.search(tests, text, re.MULTILINE)
+    total_tests = None
+    if m is not None:
+        total_tests = m.groups()[0]
+        total_tests = total_tests.replace(",", "").replace(".", "")
+    else:
+        print("[!] Failed to parse total tests")
+
     cases_data = {
         "date": date,
         "time": time,
         "total_cases": total_cases,
+        "total_tests": total_tests
     }
 
     m = re.search(recovered, text, re.MULTILINE)
@@ -65,6 +72,8 @@ def fetch_data(url):
             "time": recovered_time,
             "total_recovered": total_recovered,
         }
+    else:
+        print("[!] Failed to parse recovered")
 
     for state in states:
         cases_data[state] = get_state(state, text, "Bestätigte")
@@ -91,7 +100,7 @@ index_cols = ["date", "time"]
 def clean_data(cases):
     cases = pd.DataFrame(cases)
     cases.sort_values(by=index_cols, inplace=True)
-    cases.drop_duplicates(subset=index_cols, keep="first", inplace=True)
+    cases.drop_duplicates(subset=index_cols, keep="last", inplace=True)
     return cases
 
 
@@ -124,8 +133,11 @@ def historical():
     cases = clean_data(cases)
     recovered = clean_data(recovered)
 
-    cases.to_csv("cases.csv", index=False)
-    recovered.to_csv("recovered.csv", index=False)
+    cases_csv = os.path.join("data", "cases.csv")
+    recovered_csv = os.path.join("data", "recovered.csv")
+
+    cases.to_csv(cases_csv, index=False)
+    recovered.to_csv(recovered_csv, index=False)
 
 
 def current_data():
@@ -170,6 +182,7 @@ def main():
     template_svg(
         today_recovered["total_recovered"], large_template, "images/total-recovered.svg"
     )
+    template_svg(today_cases["total_tests"], large_template, "images/total-tests.svg")
 
     cases_csv = os.path.join("data", "cases.csv")
     recovered_csv = os.path.join("data", "recovered.csv")
@@ -187,3 +200,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # import requests_cache
+    # requests_cache.install_cache("cases_cache")
+    # historical()
