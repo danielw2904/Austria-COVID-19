@@ -3,13 +3,14 @@ import csv
 import re
 import os
 import requests
-import requests_cache
 import pandas as pd
 
 from datetime import datetime, timedelta
 from lxml import html
 
-requests_cache.install_cache("cases_cache")
+# import requests_cache
+# requests_cache.install_cache("cases_cache")
+
 url = "https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html"
 
 
