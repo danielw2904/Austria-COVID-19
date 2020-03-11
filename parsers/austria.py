@@ -146,9 +146,18 @@ def data(data_dir):
     recovered = clean_data(pd.concat([recovered, today_recovered]))
     return cases, recovered
 
+def template_svg(value, out_file):
+    with open("images/value-template.svg", 'r') as f:
+        template = f.read()
+        new_svg = template.replace("{{VALUE}}", value)
+        with open(out_file, 'w') as new:
+            new.write(new_svg)
 
 def main():
     today_cases, today_recovered = fetch_data(url)
+
+    template_svg(today_cases["total_cases"], "images/total-cases.svg")
+    template_svg(today_recovered["total_recovered"], "images/total-recovered.svg")
 
     cases_csv = os.path.join("data", "cases.csv")
     recovered_csv = os.path.join("data", "recovered.csv")
@@ -162,6 +171,7 @@ def main():
 
     cases.to_csv(cases_csv, index=False)
     recovered.to_csv(recovered_csv, index=False)
+
 
 
 if __name__ == "__main__":

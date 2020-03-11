@@ -11,11 +11,17 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ## Current Data
 
+### Total Confirmed Cases
+
+![total cases](./images/total-cases.svg)
+
+### Total Confirmed Recoveries
+
+![total recovered](./images/total-recovered.svg)
+
+### Confirmed cases by Bundesland
+
 ![Austria bundeslands confirmed cases](./images/states-cases.png)
-
-![Alt text](./images/text2.svg)
-<img src="./images/text2.svg">
-
 
 ## Developer
 
