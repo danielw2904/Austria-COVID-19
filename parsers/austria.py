@@ -40,6 +40,7 @@ def fetch_data(url):
     tests = r".*Bisher durchgeführte Testungen in.*\):\s+([\d\.,]+)"
     summary = r".*Bestätigte (?:Erkrankungsfälle|Fälle),.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+(\d+)\s+Fälle"
     recovered = r".*Genesene Personen,.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+(\d+)"
+    deaths = r".*Todesfälle,.*Uhr:\s+([\d\.,]+)"
 
     m = re.search(summary, text, re.MULTILINE)
     if m is None:
@@ -54,11 +55,18 @@ def fetch_data(url):
     else:
         print("[!] Failed to parse total tests")
 
+    m = re.search(deaths, text, re.MULTILINE)
+    total_deaths = 0
+    if m is not None:
+        total_deaths = m.groups()[0]
+        total_deaths = total_deaths.replace(",", "").replace(".", "")
+
     cases_data = {
         "date": date,
         "time": time,
         "total_cases": total_cases,
-        "total_tests": total_tests
+        "total_tests": total_tests,
+        "total_deaths": total_deaths
     }
 
     m = re.search(recovered, text, re.MULTILINE)
@@ -183,6 +191,7 @@ def main():
         today_recovered["total_recovered"], large_template, "images/total-recovered.svg"
     )
     template_svg(today_cases["total_tests"], large_template, "images/total-tests.svg")
+    template_svg(today_cases["total_deaths"], large_template, "images/total-deaths.svg")
 
     cases_csv = os.path.join("data", "cases.csv")
     recovered_csv = os.path.join("data", "recovered.csv")

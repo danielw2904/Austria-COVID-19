@@ -25,6 +25,10 @@ Last updated at: ![Last updated at](./images/updated-date.svg)
 
 ![total tests](./images/total-tests.svg)
 
+### Total Deaths
+
+![total deaths](./images/total-deaths.svg)
+
 ### Confirmed cases by Bundesland
 
 ![Austria bundeslands confirmed cases](./images/states-cases.png)
