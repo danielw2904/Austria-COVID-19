@@ -1,6 +1,6 @@
 # 🇦🇹 Österreich Austria - COVID-19 Cases
 
-![Automatic update](https://github.com/Ramblurr/Austria-COVID-19/workflows/Automatic%20update/badge.svg)
+[![Automatic update](https://github.com/Ramblurr/Austria-COVID-19/workflows/Automatic%20update/badge.svg)](https://github.com/Ramblurr/Austria-COVID-19/actions?query=workflow%3A%22Automatic+update%22)
 
 Data concerning confirmed cases and recoveries of the novel coronavirus that causes COVID-19.
 
@@ -11,7 +11,12 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ## Current Data
 
-Last updated at: ![Last updated at](./images/updated-date.svg)
+**Last updated at:** ![Last updated at](./images/updated-date.svg)
+
+#### Data in CSV Format:
+
+* [cases.csv](./data/cases.csv)
+* [recovered.csv](./data/recovered.csv)
 
 ### Total Confirmed Cases
 
@@ -21,13 +26,13 @@ Last updated at: ![Last updated at](./images/updated-date.svg)
 
 ![total recovered](./images/total-recovered.svg)
 
-### Total Tests
-
-![total tests](./images/total-tests.svg)
-
 ### Total Deaths
 
 ![total deaths](./images/total-deaths.svg)
+
+### Total Tests
+
+![total tests](./images/total-tests.svg)
 
 ### Confirmed cases by Bundesland
 
