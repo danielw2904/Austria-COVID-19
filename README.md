@@ -103,7 +103,7 @@ Fit parameters: p = 2.876 c = 0.408 t0= -2.031 a0= 26.038
 
 - ORF reported on 2020-03-12 that doubling was at 2.5 days
 - however the the recent [Lancet paper](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30260-9/fulltext) reports 6.4 days after studiying data from China for Dec 31, 2019, to Jan 28, 2020,
-- based on ![n(t') =  2n(t)](https://render.githubusercontent.com/render/math?math=n(t')%20%3D%20%202n(t)), we find ![t' = \left((2(t-t_0)^p+\frac{a_0}{c}\right)^\frac{1}{p} + t_0](https://render.githubusercontent.com/render/math?math=t'%20%3D%20%5Cleft((2(t-t_0)%5Ep%2B%5Cfrac%7Ba_0%7D%7Bc%7D%5Cright)%5E%5Cfrac%7B1%7D%7Bp%7D%20%2B%20t_0)
+- based on ![n(t') =  2n(t)](https://render.githubusercontent.com/render/math?math=n(t')%20%3D%20%202n(t)), we find ![equation](https://render.githubusercontent.com/render/math?math=t'%20%3D%20%5Cleft%28%282%28t-t_0%29%5Ep%2B%5Cfrac%7Ba_0%7D%7Bc%7D%5Cright%29%5E%5Cfrac%7B1%7D%7Bp%7D%20%2B%20t_0)
 - the time for infections or deaths to double is thus given by ![t' - t](https://render.githubusercontent.com/render/math?math=t'%20-%20t)
 - Assumes no significant change to mitigation measures 
 
