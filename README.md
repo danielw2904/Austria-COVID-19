@@ -44,11 +44,11 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 - "active" cases are those which have not recovered or not died
 
-![active cases](./images/country-cases.png)
+![active cases](./images/country-cases.svg)
 
 ### Confirmed cases by Bundesland
 
-![Austria bundeslands confirmed cases](./images/states-cases.png)
+![Austria bundeslands confirmed cases](./images/states-cases.svg)
 
 ![Table Austria bundeslands confirmed cases](./images/states-cases-table.png)
 
