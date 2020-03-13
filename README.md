@@ -55,6 +55,7 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 #### Predicting increase in infections
 
 - Assumes no significant change to mitigation measures 
+- Credit to [Hans Fangohr](https://github.com/fangohr/coronavirus-2020) for the methodology
 
 [table1]: start
 <pre>
@@ -106,6 +107,7 @@ Fit parameters: p = 2.876 c = 0.408 t0= -2.031 a0= 26.038
 - based on ![n(t') =  2n(t)](https://render.githubusercontent.com/render/math?math=n(t')%20%3D%20%202n(t)), we find ![equation](https://render.githubusercontent.com/render/math?math=t'%20%3D%20%5Cleft%28%282%28t-t_0%29%5Ep%2B%5Cfrac%7Ba_0%7D%7Bc%7D%5Cright%29%5E%5Cfrac%7B1%7D%7Bp%7D%20%2B%20t_0)
 - the time for infections or deaths to double is thus given by ![t' - t](https://render.githubusercontent.com/render/math?math=t'%20-%20t)
 - Assumes no significant change to mitigation measures 
+- Credit to [Hans Fangohr](https://github.com/fangohr/coronavirus-2020) for the methodology
 
 **Notably** these findings reproduce the ORFs reporting that in Austria around 2020-03-12 doubling was happening every 2.5 days.
 
@@ -157,12 +159,15 @@ jupyter nbconvert --execute --inplace *.ipynb
 ## License
 Licensed under BSD 3-Clause License
 
+```
 Copyright (c) 2020, Hans Fangohr
 Copyright (c) 2020, Casey Link
+```
 
 Github workflow Copyright (c) 2020 [Alex](https://github.com/alext234). Licensed under Apache 2.0.
 
 **Inspired by:**
 
-Inspired by https://github.com/alext234/coronavirus-stats
+* https://github.com/alext234/coronavirus-stats
+* https://github.com/fangohr/coronavirus-2020
 
