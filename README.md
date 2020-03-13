@@ -69,3 +69,4 @@ Code and notebooks Copyright 2020 Casey Link. Licensed under the AGPL v3 or late
 Github workflow Copyright 2020 [Alex](https://github.com/alext234). Licensed under Apache 2.0.
 
 Inspired by https://github.com/alext234/coronavirus-stats
+
