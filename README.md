@@ -52,16 +52,16 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ![Table Austria bundeslands confirmed cases](./images/states-cases-table.png)
 
-#### Predicting increase in infections
+#### Forecast of increase in infections
 
 - Assumes no significant change to mitigation measures 
 - Credit to [Hans Fangohr](https://github.com/fangohr/coronavirus-2020) for the methodology
 
 [table1]: start
 <pre>
-Predictions for cases in austria:
+Forecast for cases in Austria:
 
-Last data point used in prediction from 2020-03-13 00:00:00
+Last data point used in forecast from 2020-03-13 00:00:00
 
 Infections in 10 days:    584 (14 Mar 2020)
 Infections in 11 days:    715 (15 Mar 2020)
@@ -99,11 +99,11 @@ Fit parameters: p = 2.187 c = 3.67 t0= -0.000 a0= 19.949
 
 
 ##### Fitting the curve
-![increase prediction model](images/infections-with-model-fit.svg)
+![increase forecast model](images/infections-with-model-fit.svg)
 
-##### Predictions for cases in Austria
+##### Forecasts for cases in Austria
 
-![predicted infections austria](images/infections-with-forecast.svg)
+![forecast infections austria](images/infections-with-forecast.svg)
 
 #### How long does it take for the number of infections to double?
 
@@ -118,7 +118,7 @@ Fit parameters: p = 2.187 c = 3.67 t0= -0.000 a0= 19.949
 
 [table2]: start
 <pre>
-Predictions for infections doubling in austria:
+Forecast for infections doubling in austria:
 
 at day  0 (04 Mar 2020), the time to double n is  2.2 days
 at day  2 (06 Mar 2020), the time to double n is  1.4 days

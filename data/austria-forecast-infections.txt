@@ -1,6 +1,6 @@
-Predictions for cases in austria:
+Forecast for cases in Austria:
 
-Last data point used in prediction from 2020-03-13 00:00:00
+Last data point used in forecast from 2020-03-13 00:00:00
 
 Infections in 10 days:    584 (14 Mar 2020)
 Infections in 11 days:    715 (15 Mar 2020)
