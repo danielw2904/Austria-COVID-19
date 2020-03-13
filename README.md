@@ -97,8 +97,13 @@ Fit parameters: p = 2.187 c = 3.67 t0= -0.000 a0= 19.949
 </pre>
 [table1]: end
 
-##### fitting the curve
+
+##### Fitting the curve
 ![increase prediction model](images/infections-with-model-fit.svg)
+
+##### Predictions for cases in Austria
+
+![predicted infections austria](images/infections-with-forecast.svg)
 
 #### How long does it take for the number of infections to double?
 

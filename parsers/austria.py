@@ -106,9 +106,11 @@ index_cols = ["date", "time"]
 
 
 def clean_data(cases):
+    print("PRE CLEAN", cases)
     cases = pd.DataFrame(cases)
     cases.sort_values(by=index_cols, inplace=True)
     cases.drop_duplicates(subset=index_cols, keep="last", inplace=True)
+    print("POSTCLEAN", cases)
     return cases
 
 
@@ -156,15 +158,8 @@ def current_data():
 
 
 def data(data_dir):
-    today_cases, today_recovered = fetch_data(url)
-
     cases = pd.read_csv(os.path.join(data_dir, "cases.csv"))
     recovered = pd.read_csv(os.path.join(data_dir, "recovered.csv"))
-
-    today_cases = pd.DataFrame([today_cases])
-    today_recovered = pd.DataFrame([today_recovered])
-    cases = clean_data(pd.concat([cases, today_cases]))
-    recovered = clean_data(pd.concat([recovered, today_recovered]))
     return cases, recovered
 
 
@@ -210,7 +205,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    #main()
+    cases, r = data("data")
+    print(cases)
     # import requests_cache
     # requests_cache.install_cache("cases_cache")
     # historical()
