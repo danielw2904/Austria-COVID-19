@@ -52,9 +52,10 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ![Table Austria bundeslands confirmed cases](./images/states-cases-table.png)
 
-#### Forecast of increase in infections
+### Forecast of increase in infections
 
-- Assumes no significant change to mitigation measures 
+- **Assumes no significant change to mitigation measures**
+  - Given [the announcement on 2020-03-13 by the Austrian Government](https://www.derstandard.at/jetzt/livebericht/2000115687827/neue-massnahmen-sollen-ausbreitung-des-coronavirus-eindaemmen?responsive=false), this is not a valid assumption.
 - Credit to [Hans Fangohr](https://github.com/fangohr/coronavirus-2020) for the methodology
 
 [table1]: start
@@ -98,20 +99,20 @@ Fit parameters: p = 2.187 c = 3.67 t0= -0.000 a0= 19.949
 [table1]: end
 
 
-##### Fitting the curve
+#### Fitting the curve
 ![increase forecast model](images/infections-with-model-fit.svg)
 
-##### Forecasts for cases in Austria
+#### Forecasts for cases in Austria
 
 ![forecast infections austria](images/infections-with-forecast.svg)
 
-#### How long does it take for the number of infections to double?
+### How long does it take for the number of infections to double?
 
 - ORF reported on 2020-03-12 that doubling was at 2.5 days
 - however the the recent [Lancet paper](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30260-9/fulltext) reports 6.4 days after studiying data from China for Dec 31, 2019, to Jan 28, 2020,
 - based on ![n(t') =  2n(t)](https://render.githubusercontent.com/render/math?math=n(t')%20%3D%20%202n(t)), we find ![equation](https://render.githubusercontent.com/render/math?math=t'%20%3D%20%5Cleft%28%282%28t-t_0%29%5Ep%2B%5Cfrac%7Ba_0%7D%7Bc%7D%5Cright%29%5E%5Cfrac%7B1%7D%7Bp%7D%20%2B%20t_0)
 - the time for infections or deaths to double is thus given by ![t' - t](https://render.githubusercontent.com/render/math?math=t'%20-%20t)
-- Assumes no significant change to mitigation measures 
+- **Assumes no significant change to mitigation measures**
 - Credit to [Hans Fangohr](https://github.com/fangohr/coronavirus-2020) for the methodology
 
 **Notably** these findings reproduce the ORFs reporting that in Austria around 2020-03-12 doubling was happening every 2.5 days.
