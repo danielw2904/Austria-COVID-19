@@ -26,7 +26,7 @@ states = [
 
 
 def get_state(state, text, prefix):
-    m = re.search("{}.*{}\s+\((\d+)\)".format(prefix, state), text, re.MULTILINE)
+    m = re.search("{}.*{}\s+\((\d+)(?: -.*)*\)".format(prefix, state), text, re.MULTILINE)
     if m is not None:
         return int(m.group(1))
     return 0
