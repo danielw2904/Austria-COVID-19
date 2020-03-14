@@ -205,9 +205,7 @@ def main():
 
 
 if __name__ == "__main__":
-    #main()
-    cases, r = data("data")
-    print(cases)
+    main()
     # import requests_cache
     # requests_cache.install_cache("cases_cache")
     # historical()
