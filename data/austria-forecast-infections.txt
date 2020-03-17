@@ -22,7 +22,7 @@ Infections in 30 days:   6902 (03 Apr 2020)
 Infections in 31 days:   7404 (04 Apr 2020)
 Infections in 32 days:   7924 (05 Apr 2020)
 Infections in 33 days:   8464 (06 Apr 2020)
-Infections in 34 days:   9023 (07 Apr 2020)
+Infections in 34 days:   9022 (07 Apr 2020)
 Infections in 35 days:   9600 (08 Apr 2020)
 Infections in 36 days:  10197 (09 Apr 2020)
 Infections in 37 days:  10813 (10 Apr 2020)
@@ -30,6 +30,6 @@ Infections in 38 days:  11448 (11 Apr 2020)
 Infections in 39 days:  12103 (12 Apr 2020)
 Infections in 40 days:  12777 (13 Apr 2020)
 Infections in 41 days:  13470 (14 Apr 2020)
-Infections in 42 days:  14184 (15 Apr 2020)
+Infections in 42 days:  14183 (15 Apr 2020)
 
-Fit parameters: p = 2.140 c = 4.76 t0= -0.000 a0= -2.679
+Fit parameters: p = 2.140 c = 4.76 t0= -0.000 a0= -2.680
