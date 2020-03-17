@@ -38,14 +38,16 @@ def fetch_data(url):
 
     text = tree.xpath('//div[@class="infobox"]')[0].text_content()
     tests = r".*Bisher durchgeführte Testungen in.*\):\s+([\d\.,]+)"
-    summary = r".*Bestätigte (?:Erkrankungsfälle|Fälle),.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+(\d+)\s+Fälle"
-    recovered = r".*Genesene Personen,.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+(\d+)"
+    summary = r".*Bestätigte (?:Erkrankungsfälle|Fälle),.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+([\d.]+)\s+Fälle"
+    recovered = r".*Genesene Personen,.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+([\d.]+)"
     deaths = r".*Todesfälle,.*Uhr:\s+([\d\.,]+)"
 
     m = re.search(summary, text, re.MULTILINE)
+    print(m)
     if m is None:
         return None, None
     date, time, total_cases = m.groups()
+    total_cases = total_cases.replace(",", "").replace(".", "")
 
     m = re.search(tests, text, re.MULTILINE)
     total_tests = None
@@ -175,6 +177,7 @@ def main():
     today_cases, today_recovered = fetch_data(url)
     large_template = "images/value-template.svg"
     small_template = "images/small-template.svg"
+    print(today_cases)
 
     template_svg(
         datetime.now().strftime("%d.%m.%Y %H:%M"),
