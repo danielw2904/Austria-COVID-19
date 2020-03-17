@@ -46,6 +46,10 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 ![active cases](./images/country-cases.svg)
 
+### Neue bestätigte Fälle pro Tag Österreichweit
+
+![new cases per day](./images/country-new-per-day.svg)
+
 ### Bisher durchgeführte Testungen in Österreich 
 
 ![tests](./images/country-tests.svg)
