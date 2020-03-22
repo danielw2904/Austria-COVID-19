@@ -2,9 +2,9 @@ Forecast for infections doubling in austria:
 
 at day  0 (04 Mar 2020), the time to double n is  nan days
 at day  2 (06 Mar 2020), the time to double n is  nan days
-at day  4 (08 Mar 2020), the time to double n is  0.4 days
-at day  6 (10 Mar 2020), the time to double n is  1.6 days
-at day  8 (12 Mar 2020), the time to double n is  2.6 days
+at day  4 (08 Mar 2020), the time to double n is  0.2 days
+at day  6 (10 Mar 2020), the time to double n is  1.5 days
+at day  8 (12 Mar 2020), the time to double n is  2.5 days
 at day 10 (14 Mar 2020), the time to double n is  3.4 days
 at day 12 (16 Mar 2020), the time to double n is  4.2 days
 at day 14 (18 Mar 2020), the time to double n is  5.0 days
