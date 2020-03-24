@@ -185,12 +185,16 @@ def main():
         "images/updated-date.svg",
     )
     template_svg(today_cases["total_cases"], large_template, "images/total-cases.svg")
-    template_svg(
-        today_recovered["total_recovered"], large_template, "images/total-recovered.svg"
-    )
+    if today_recovered is not None:
+        template_svg(
+            today_recovered["total_recovered"], large_template, "images/total-recovered.svg"
+        )
     template_svg(today_cases["total_tests"], large_template, "images/total-tests.svg")
     template_svg(today_cases["total_deaths"], large_template, "images/total-deaths.svg")
-    total_active = int(today_cases["total_cases"]) - int(today_cases["total_deaths"]) - int(today_recovered["total_recovered"])
+    recovered = 0
+    if today_recovered is not None or 0:
+     recovered = int(today_recovered["total_recovered"] )
+    total_active = int(today_cases["total_cases"]) - int(today_cases["total_deaths"]) - recovered
     template_svg(str(total_active), large_template, "images/total-active.svg")
 
     cases_csv = os.path.join("data", "cases.csv")

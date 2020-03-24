@@ -13,6 +13,11 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 
 **Last updated at:** ![Last updated at](./images/updated-date.svg)
 
+#### Updates
+
+* 2020-03-20: Austria has stopped reporting recovered cases, so "active" below is not a reliable figure
+* 2020-03-13: Austria [announces](https://www.derstandard.at/jetzt/livebericht/2000115687827/neue-massnahmen-sollen-ausbreitung-des-coronavirus-eindaemmen?responsive=false) drastic measures in effort to flatten the curve
+
 #### Data in CSV Format:
 
 * [cases.csv](./data/cases.csv)
@@ -70,39 +75,39 @@ Data concerning confirmed cases and recoveries of the novel coronavirus that cau
 <pre>
 Forecast for cases in Austria:
 
-Last data point used in forecast from 2020-03-18 00:00:00
+Last data point used in forecast from 2020-03-24 00:00:00
 
-Infections in 15 days:   1769 (19 Mar 2020)
-Infections in 16 days:   2039 (20 Mar 2020)
-Infections in 17 days:   2330 (21 Mar 2020)
-Infections in 18 days:   2642 (22 Mar 2020)
-Infections in 19 days:   2975 (23 Mar 2020)
-Infections in 20 days:   3329 (24 Mar 2020)
-Infections in 21 days:   3704 (25 Mar 2020)
-Infections in 22 days:   4100 (26 Mar 2020)
-Infections in 23 days:   4518 (27 Mar 2020)
-Infections in 24 days:   4958 (28 Mar 2020)
-Infections in 25 days:   5420 (29 Mar 2020)
-Infections in 26 days:   5904 (30 Mar 2020)
-Infections in 27 days:   6410 (31 Mar 2020)
-Infections in 28 days:   6938 (01 Apr 2020)
-Infections in 29 days:   7489 (02 Apr 2020)
-Infections in 30 days:   8063 (03 Apr 2020)
-Infections in 31 days:   8659 (04 Apr 2020)
-Infections in 32 days:   9278 (05 Apr 2020)
-Infections in 33 days:   9920 (06 Apr 2020)
-Infections in 34 days:  10586 (07 Apr 2020)
-Infections in 35 days:  11274 (08 Apr 2020)
-Infections in 36 days:  11986 (09 Apr 2020)
-Infections in 37 days:  12721 (10 Apr 2020)
-Infections in 38 days:  13480 (11 Apr 2020)
-Infections in 39 days:  14262 (12 Apr 2020)
-Infections in 40 days:  15069 (13 Apr 2020)
-Infections in 41 days:  15899 (14 Apr 2020)
-Infections in 42 days:  16753 (15 Apr 2020)
-Infections in 43 days:  17631 (16 Apr 2020)
+Infections in 21 days:   4611 (25 Mar 2020)
+Infections in 22 days:   5118 (26 Mar 2020)
+Infections in 23 days:   5652 (27 Mar 2020)
+Infections in 24 days:   6214 (28 Mar 2020)
+Infections in 25 days:   6804 (29 Mar 2020)
+Infections in 26 days:   7422 (30 Mar 2020)
+Infections in 27 days:   8069 (31 Mar 2020)
+Infections in 28 days:   8744 (01 Apr 2020)
+Infections in 29 days:   9448 (02 Apr 2020)
+Infections in 30 days:  10181 (03 Apr 2020)
+Infections in 31 days:  10942 (04 Apr 2020)
+Infections in 32 days:  11733 (05 Apr 2020)
+Infections in 33 days:  12554 (06 Apr 2020)
+Infections in 34 days:  13404 (07 Apr 2020)
+Infections in 35 days:  14283 (08 Apr 2020)
+Infections in 36 days:  15193 (09 Apr 2020)
+Infections in 37 days:  16132 (10 Apr 2020)
+Infections in 38 days:  17101 (11 Apr 2020)
+Infections in 39 days:  18101 (12 Apr 2020)
+Infections in 40 days:  19131 (13 Apr 2020)
+Infections in 41 days:  20191 (14 Apr 2020)
+Infections in 42 days:  21282 (15 Apr 2020)
+Infections in 43 days:  22404 (16 Apr 2020)
+Infections in 44 days:  23556 (17 Apr 2020)
+Infections in 45 days:  24740 (18 Apr 2020)
+Infections in 46 days:  25955 (19 Apr 2020)
+Infections in 47 days:  27200 (20 Apr 2020)
+Infections in 48 days:  28477 (21 Apr 2020)
+Infections in 49 days:  29786 (22 Apr 2020)
 
-Fit parameters: p = 2.167 c = 5.1 t0= -0.000 a0= -34.717
+Fit parameters: p = 2.166 c = 6.53 t0= -0.000 a0= -167.682
 </pre>
 [table1]: end
 
@@ -130,20 +135,20 @@ Fit parameters: p = 2.167 c = 5.1 t0= -0.000 a0= -34.717
 Forecast for infections doubling in austria:
 
 at day  0 (04 Mar 2020), the time to double n is  nan days
-at day  2 (06 Mar 2020), the time to double n is -0.6 days
-at day  4 (08 Mar 2020), the time to double n is  1.1 days
-at day  6 (10 Mar 2020), the time to double n is  2.0 days
-at day  8 (12 Mar 2020), the time to double n is  2.8 days
-at day 10 (14 Mar 2020), the time to double n is  3.6 days
-at day 12 (16 Mar 2020), the time to double n is  4.4 days
-at day 14 (18 Mar 2020), the time to double n is  5.2 days
-at day 16 (20 Mar 2020), the time to double n is  5.9 days
-at day 18 (22 Mar 2020), the time to double n is  6.7 days
-at day 20 (24 Mar 2020), the time to double n is  7.5 days
-at day 22 (26 Mar 2020), the time to double n is  8.2 days
-at day 24 (28 Mar 2020), the time to double n is  9.0 days
-at day 26 (30 Mar 2020), the time to double n is  9.8 days
-at day 28 (01 Apr 2020), the time to double n is 10.5 days
+at day  2 (06 Mar 2020), the time to double n is  nan days
+at day  4 (08 Mar 2020), the time to double n is -0.6 days
+at day  6 (10 Mar 2020), the time to double n is  1.2 days
+at day  8 (12 Mar 2020), the time to double n is  2.3 days
+at day 10 (14 Mar 2020), the time to double n is  3.2 days
+at day 12 (16 Mar 2020), the time to double n is  4.1 days
+at day 14 (18 Mar 2020), the time to double n is  4.9 days
+at day 16 (20 Mar 2020), the time to double n is  5.7 days
+at day 18 (22 Mar 2020), the time to double n is  6.5 days
+at day 20 (24 Mar 2020), the time to double n is  7.3 days
+at day 22 (26 Mar 2020), the time to double n is  8.1 days
+at day 24 (28 Mar 2020), the time to double n is  8.8 days
+at day 26 (30 Mar 2020), the time to double n is  9.6 days
+at day 28 (01 Apr 2020), the time to double n is 10.4 days
 
 </pre>
 [table2]: end
