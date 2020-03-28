@@ -26,9 +26,9 @@ states = [
 
 
 def get_state(state, text, prefix):
-    m = re.search("{}.*{}\s+\((\d+)(?: -.*)*\)".format(prefix, state), text, re.MULTILINE)
+    m = re.search("{}.*{}\s+\(([\d.]+)(?: -.*)*\)".format(prefix, state), text, re.MULTILINE)
     if m is not None:
-        return int(m.group(1))
+        return int(m.group(1).replace(",", "").replace(".", ""))
     return 0
 
 
@@ -36,7 +36,7 @@ def fetch_data(url):
     page = requests.get(url)
     tree = html.fromstring(page.content)
 
-    text = tree.xpath('//div[@class="infobox"]')[0].text_content()
+    text = tree.xpath('//main[@id="content"]')[0].text_content()
     tests = r".*Bisher durchgeführte Testungen in.*\):\s+([\d\.,]+)"
     summary = r".*Bestätigte (?:Erkrankungsfälle|Fälle),.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+([\d.]+)\s+Fälle"
     recovered = r".*Genesene Personen,.*Stand\s+(.*),\s+(.*)\s+Uhr:\s+([\d.]+)"
