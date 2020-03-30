@@ -168,7 +168,7 @@ def data(data_dir):
 def template_svg(value, template, out_file):
     with open(template, "r") as f:
         template = f.read()
-        new_svg = template.replace("{{VALUE}}", value)
+        new_svg = template.replace("{{VALUE}}", str(value))
         with open(out_file, "w") as new:
             new.write(new_svg)
 
